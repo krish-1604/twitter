@@ -2,8 +2,14 @@ import 'package:first/home.dart';
 import 'package:first/login.dart';
 import 'package:flutter/material.dart';
 
-class Signup extends StatelessWidget {
-  const Signup({Key? key}) : super(key: key);
+class Signup extends StatefulWidget {
+  @override
+  _SignupState createState() => _SignupState();
+}
+
+class _SignupState extends State<Signup> {
+  String _username, _email, _password;
+  final GlobalKey<_SignupState> _globalKey = GlobalKey(_SignupState);
 
   @override
   Widget build(BuildContext context) {

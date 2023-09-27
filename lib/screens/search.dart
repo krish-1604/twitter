@@ -22,7 +22,44 @@ class Search extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView(),
+      body: ListView(
+        children: [
+          SizedBox(height: 20),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 16.0),
+            decoration: BoxDecoration(
+              color: Color(0xFF040404),
+              borderRadius: BorderRadius.circular(5.0),
+              border: Border.all(
+                color: Colors.blue,
+                width: 2.0,
+              ),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      hintStyle: TextStyle(color: Color(0xFF5A5A5A)),
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.all(16.0),
+                    ),
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.search,
+                    color: Color(0xFF5A5A5A),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
       bottomNavigationBar: Row(
         children: [
           SizedBox(width: 40),
