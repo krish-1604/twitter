@@ -1,10 +1,10 @@
+import 'package:first/home.dart';
 import 'package:first/screens/msg.dart';
 import 'package:first/screens/profile.dart';
-import 'package:first/screens/search.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class Search extends StatelessWidget {
+  const Search({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
