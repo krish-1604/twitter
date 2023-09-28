@@ -1,5 +1,5 @@
 import 'package:first/home.dart';
-import 'package:first/signup.dart';
+import 'package:first/login/signup/signup.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
