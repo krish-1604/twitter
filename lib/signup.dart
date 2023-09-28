@@ -171,15 +171,10 @@ class _SignupState extends State<Signup> {
               children: [
                 TextButton(
                   onPressed: () {
-                    // Check if the username field is valid
                     if (_formkey.currentState!.validate()) {
-                      // Navigate to the desired screen when the username is valid
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Home()));
-                    } else {
-                      // Handle the case when the username is not valid (e.g., show an error message)
-                      // You can add code here to display an error message to the user.
-                    }
+                    } else {}
                   },
                   style: ButtonStyle(
                     backgroundColor:
@@ -231,6 +226,7 @@ class _SignupState extends State<Signup> {
                 ),
               ],
             ),
+            SizedBox(height: 20),
           ],
         ),
       ),

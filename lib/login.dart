@@ -81,6 +81,12 @@ class _LoginState extends State<Login> {
                   contentPadding: EdgeInsets.all(16.0),
                 ),
                 style: TextStyle(color: Colors.white),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter Username';
+                  } else {}
+                  return null;
+                },
                 onSaved: (value) {
                   _Username = value ?? '';
                 },
@@ -105,10 +111,33 @@ class _LoginState extends State<Login> {
                   contentPadding: EdgeInsets.all(16.0),
                 ),
                 style: TextStyle(color: Colors.white),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter Password';
+                  } else {}
+                  return null;
+                },
                 onSaved: (value) {
                   _Password = value ?? '';
                 },
               ),
+            ),
+            SizedBox(height: 5),
+            Row(
+              children: [
+                SizedBox(height: 10, width: 18),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Forgot Password?",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontFamily: 'Lato',
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+              ],
             ),
             SizedBox(height: 20),
             Row(
@@ -116,8 +145,10 @@ class _LoginState extends State<Login> {
               children: [
                 TextButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Home()));
+                    if (_Formkey.currentState!.validate()) {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Home()));
+                    } else {}
                   },
                   style: ButtonStyle(
                     backgroundColor:

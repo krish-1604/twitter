@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'signup.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key); // Use 'key' parameter correctly.
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
