@@ -105,6 +105,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
               child: TextFormField(
+                obscureText: _SecurePassword,
                 decoration: InputDecoration(
                   hintText: 'Password',
                   hintStyle: TextStyle(color: Color(0xFF5A5A5A)),
