@@ -8,6 +8,8 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
+  bool _securepassword = true;
+  String _name = '';
   String _username = '';
   String _email = '';
   String _password = '';
@@ -48,6 +50,35 @@ class _SignupState extends State<Signup> {
                   fontFamily: 'Lato',
                   fontSize: 25,
                 ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 16.0),
+              decoration: BoxDecoration(
+                color: Color(0xFF040404),
+                borderRadius: BorderRadius.circular(10.0),
+                border: Border.all(
+                  color: Colors.blue,
+                  width: 2.0,
+                ),
+              ),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Full Name',
+                  hintStyle: TextStyle(color: Color(0xFF5A5A5A)),
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.all(16.0),
+                ),
+                style: TextStyle(color: Colors.white),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter username';
+                  }
+                },
+                onSaved: (value) {
+                  _name = value ?? '';
+                },
               ),
             ),
             SizedBox(height: 20),
@@ -139,11 +170,13 @@ class _SignupState extends State<Signup> {
                 ),
               ),
               child: TextFormField(
+                obscureText: _securepassword,
                 decoration: InputDecoration(
                   hintText: 'Password',
                   hintStyle: TextStyle(color: Color(0xFF5A5A5A)),
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.all(16.0),
+                  suffixIcon: togglePassword(),
                 ),
                 style: TextStyle(color: Colors.white),
                 validator: (value) {
@@ -230,6 +263,19 @@ class _SignupState extends State<Signup> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget togglePassword() {
+    return IconButton(
+      onPressed: () {
+        setState(() {
+          _securepassword = !_securepassword;
+        });
+      },
+      icon:
+          _securepassword ? Icon(Icons.visibility) : Icon(Icons.visibility_off),
+      color: Color(0xFF5A5A5A),
     );
   }
 }

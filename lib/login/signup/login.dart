@@ -8,6 +8,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  bool _SecurePassword = true;
   String _Username = '';
   String _Password = '';
   final GlobalKey<FormState> _Formkey = GlobalKey<FormState>();
@@ -109,6 +110,7 @@ class _LoginState extends State<Login> {
                   hintStyle: TextStyle(color: Color(0xFF5A5A5A)),
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.all(16.0),
+                  suffixIcon: TogglePassword(),
                 ),
                 style: TextStyle(color: Colors.white),
                 validator: (value) {
@@ -175,6 +177,19 @@ class _LoginState extends State<Login> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget TogglePassword() {
+    return IconButton(
+      onPressed: () {
+        setState(() {
+          _SecurePassword = !_SecurePassword;
+        });
+      },
+      icon:
+          _SecurePassword ? Icon(Icons.visibility) : Icon(Icons.visibility_off),
+      color: Color(0xFF5A5A5A),
     );
   }
 }
