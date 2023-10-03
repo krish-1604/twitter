@@ -9,11 +9,11 @@ class Signup extends StatefulWidget {
 
 class _SignupState extends State<Signup> {
   bool _securepassword = true;
-  String _name = '';
   String _username = '';
   String _email = '';
   String _password = '';
-  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  final name = TextEditingController();
+  GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +64,7 @@ class _SignupState extends State<Signup> {
                 ),
               ),
               child: TextFormField(
+                controller: name,
                 decoration: InputDecoration(
                   hintText: 'Full Name',
                   hintStyle: TextStyle(color: Color(0xFF5A5A5A)),
@@ -73,11 +74,8 @@ class _SignupState extends State<Signup> {
                 style: TextStyle(color: Colors.white),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter username';
+                    return 'Please enter name';
                   }
-                },
-                onSaved: (value) {
-                  _name = value ?? '';
                 },
               ),
             ),
