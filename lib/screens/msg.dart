@@ -1,4 +1,5 @@
 import 'package:first/home.dart';
+import 'package:first/screens/noti.dart';
 import 'package:first/screens/profile.dart';
 import 'package:first/screens/search.dart';
 import 'package:flutter/material.dart';
@@ -9,14 +10,15 @@ class Msg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF040404),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xFF040404),
+        elevation: 0,
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         title: Container(
           alignment: Alignment.center,
           child: Image(
-            image: AssetImage("assets/logo.png"),
+            image: AssetImage("assets/logo_final.png"),
             height: 40,
             width: 40,
           ),
@@ -25,7 +27,7 @@ class Msg extends StatelessWidget {
       body: ListView(),
       bottomNavigationBar: Row(
         children: [
-          SizedBox(width: 40),
+          SizedBox(width: 27.4),
           Container(
             child: IconButton(
               onPressed: () {
@@ -36,10 +38,10 @@ class Msg extends StatelessWidget {
                 Icons.home,
                 size: 30,
               ),
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
-          SizedBox(width: 40),
+          SizedBox(width: 27.4),
           Container(
             child: IconButton(
               onPressed: () {
@@ -50,24 +52,35 @@ class Msg extends StatelessWidget {
                 Icons.search,
                 size: 30,
               ),
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
-          SizedBox(width: 40),
+          SizedBox(width: 27.4),
           Container(
             child: IconButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Msg()));
+                    context, MaterialPageRoute(builder: (context) => Noti()));
               },
               icon: Icon(
-                Icons.message_rounded,
+                Icons.notifications,
                 size: 30,
               ),
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
-          SizedBox(width: 40),
+          SizedBox(width: 27.4),
+          Container(
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.mail,
+                size: 30,
+              ),
+              color: Colors.black,
+            ),
+          ),
+          SizedBox(width: 27.4),
           Container(
             child: IconButton(
               onPressed: () {
@@ -75,13 +88,13 @@ class Msg extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => Profile()));
               },
               icon: Icon(
-                Icons.face,
+                Icons.person,
                 size: 30,
               ),
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
-          SizedBox(width: 40),
+          SizedBox(width: 27.4),
         ],
       ),
     );

@@ -1,11 +1,10 @@
 import 'package:first/home.dart';
 import 'package:first/screens/msg.dart';
-import 'package:first/screens/noti.dart';
-import 'package:first/screens/profile.dart';
+import 'package:first/screens/search.dart';
 import 'package:flutter/material.dart';
 
-class Search extends StatelessWidget {
-  const Search({Key? key}) : super(key: key);
+class Noti extends StatelessWidget {
+  const Noti({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,44 +23,7 @@ class Search extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView(
-        children: [
-          SizedBox(height: 20),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 16.0),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(5.0),
-              border: Border.all(
-                color: Colors.black,
-                width: 2.0,
-              ),
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Search',
-                      hintStyle: TextStyle(color: Color(0xFF5A5A5A)),
-                      border: InputBorder.none,
-                      contentPadding: EdgeInsets.all(16.0),
-                    ),
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.search,
-                    color: Color(0xFF5A5A5A),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      body: ListView(),
       bottomNavigationBar: Row(
         children: [
           SizedBox(width: 27.4),
@@ -81,7 +43,10 @@ class Search extends StatelessWidget {
           SizedBox(width: 27.4),
           Container(
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Search()));
+              },
               icon: Icon(
                 Icons.search,
                 size: 30,
@@ -92,10 +57,7 @@ class Search extends StatelessWidget {
           SizedBox(width: 27.4),
           Container(
             child: IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Noti()));
-              },
+              onPressed: () {},
               icon: Icon(
                 Icons.notifications,
                 size: 30,
@@ -120,10 +82,7 @@ class Search extends StatelessWidget {
           SizedBox(width: 27.4),
           Container(
             child: IconButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Profile()));
-              },
+              onPressed: () {},
               icon: Icon(
                 Icons.person,
                 size: 30,

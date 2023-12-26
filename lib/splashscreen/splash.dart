@@ -21,23 +21,26 @@ class _splashState extends State<splash> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF040404),
+      backgroundColor: Colors.white,
       body: Container(
         child: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image(
-                  image: AssetImage(
-                    "assets/logo.png",
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image(
+                    image: AssetImage(
+                      "assets/logo_final.png",
+                    ),
+                    height: 150,
+                    width: 150,
                   ),
-                  height: 150,
-                  width: 150,
-                ),
-              ],
-            ),
-          ]),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

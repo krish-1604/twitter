@@ -16,7 +16,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF040404),
+      backgroundColor: Colors.white,
       body: Form(
         key: _Formkey,
         child: ListView(
@@ -30,13 +30,13 @@ class _LoginState extends State<Login> {
                 },
                 icon: Icon(
                   Icons.arrow_back,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
             SizedBox(height: 90),
             Image.asset(
-              'assets/logo.png',
+              'assets/logo_final.png',
               width: 150,
               height: 150,
             ),
@@ -45,7 +45,7 @@ class _LoginState extends State<Login> {
               child: Text(
                 "Happening now!",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 40,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.bold,
@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
               child: Text(
                 "Join today.",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontFamily: 'Lato',
                   fontSize: 25,
                 ),
@@ -67,10 +67,10 @@ class _LoginState extends State<Login> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16.0),
               decoration: BoxDecoration(
-                color: Color(0xFF040404),
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(10.0),
                 border: Border.all(
-                  color: Colors.blue,
+                  color: Colors.black,
                   width: 2.0,
                 ),
               ),
@@ -81,7 +81,7 @@ class _LoginState extends State<Login> {
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.all(16.0),
                 ),
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.black),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter Username';
@@ -97,10 +97,10 @@ class _LoginState extends State<Login> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16.0),
               decoration: BoxDecoration(
-                color: Color(0xFF040404),
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(10.0),
                 border: Border.all(
-                  color: Colors.blue,
+                  color: Colors.black,
                   width: 2.0,
                 ),
               ),
@@ -113,7 +113,7 @@ class _LoginState extends State<Login> {
                   contentPadding: EdgeInsets.all(16.0),
                   suffixIcon: TogglePassword(),
                 ),
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.black),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter Password';
@@ -167,7 +167,7 @@ class _LoginState extends State<Login> {
                     child: Text(
                       "Login",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
