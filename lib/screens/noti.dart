@@ -23,7 +23,8 @@ class Noti extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView(),
+      body: ListView(
+      ),
       bottomNavigationBar: Row(
         children: [
           SizedBox(width: 27.4),
