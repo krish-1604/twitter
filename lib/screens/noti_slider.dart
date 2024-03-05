@@ -20,7 +20,7 @@ class _LeaderboardState extends State<Slider1> with TickerProviderStateMixin {
 
   void _updateLinePosition() {
     setState(() {
-      _linePosition = _tabController.index == 0 ? 0 : 1;
+      _linePosition = _tabController.index / (_tabController.length - 1);
     });
   }
 
@@ -30,17 +30,15 @@ class _LeaderboardState extends State<Slider1> with TickerProviderStateMixin {
         _tabController.animateTo(tabIndex);
       },
       child: Container(
-        width: 150,
-        height: 50,
+        width: 130,
         decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
         ),
         child: Center(
           child: Text(
             label,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -55,13 +53,12 @@ class _LeaderboardState extends State<Slider1> with TickerProviderStateMixin {
       body: ListView(
         children: [
           Container(
-            height: 40,
-            color: Colors.black,
+            height: 10,
           ),
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
-              color: Colors.black,
+              color: Colors.white,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -70,14 +67,14 @@ class _LeaderboardState extends State<Slider1> with TickerProviderStateMixin {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      _buildTab('LeaderBoard', 0),
-                      SizedBox(width: 16),
-                      _buildTab('ScoreBoard', 1),
+                      _buildTab('All', 0),
+                      _buildTab('Verified', 1),
+                      _buildTab('Mentions', 2),
                     ],
                   ),
                 ),
                 Container(
-                  height: 300,
+                  height: 1200,
                   child: GestureDetector(
                     onHorizontalDragEnd: (details) {
                       if (details.primaryVelocity! > 0) {
@@ -97,15 +94,18 @@ class _LeaderboardState extends State<Slider1> with TickerProviderStateMixin {
                             Container(
                               alignment: Alignment.center,
                             ),
+                            Container(
+                              alignment: Alignment.center,
+                            ),
                           ],
                         ),
                         Container(
-                          width: 150,
+                          width: 50,
                           height: 2,
-                          color: Colors.white,
+                          color: Colors.black,
                           margin: EdgeInsets.only(
                             top: 8,
-                            left: 36 + _linePosition * (150 + 16),
+                            left: 50 + _linePosition * (210 + 50),
                           ),
                         ),
                       ],
