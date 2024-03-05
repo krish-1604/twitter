@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        elevation: 0,
+        elevation: 1,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         title: Container(
@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
       body: ListView(
         children: [
           SizedBox(
-            height: 40,
+            height: 20,
           ),
           AnimatedContainer(
             duration: Duration(milliseconds: 300),
