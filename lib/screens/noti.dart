@@ -1,5 +1,6 @@
 import 'package:first/home.dart';
 import 'package:first/screens/msg.dart';
+import 'package:first/screens/noti_slider.dart';
 import 'package:first/screens/search.dart';
 import 'package:flutter/material.dart';
 
@@ -23,8 +24,7 @@ class Noti extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView(
-      ),
+      body: Slider1(),
       bottomNavigationBar: Row(
         children: [
           SizedBox(width: 27.4),
